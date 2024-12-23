@@ -4,6 +4,7 @@ public class Token {
     TokenKind type;
     Integer pos;
 
+    // For tokens with no value
     public Token(String name, TokenKind tk, int pos) {
         this(name, tk, pos, null);
     }

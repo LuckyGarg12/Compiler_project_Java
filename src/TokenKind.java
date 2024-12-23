@@ -1,3 +1,5 @@
+// Enum for different types of tokens
+
 public enum TokenKind {
     NumberToken,
     WhitespaceToken,

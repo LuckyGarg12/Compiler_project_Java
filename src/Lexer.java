@@ -57,37 +57,49 @@ public class Lexer {
             tk = TokenKind.NumberToken;
         }
 
+        // Plus Operator Token
         else if (curChar() == '+') {
             name += curChar();
             tk = TokenKind.PlusToken;
             nextPos();
         }
+
+        // Minus Operator Token
         else if (curChar() == '-') {
             name += curChar();
             tk = TokenKind.MinusToken;
             nextPos();
         }
+
+        // Star Operator Token
         else if (curChar() == '*') {
             name += curChar();
             tk = TokenKind.StarToken;
             nextPos();
         }
+
+        // Slash Operator Token
         else if (curChar() == '/') {
             name += curChar();
             tk = TokenKind.SlashToken;
             nextPos();
         }
+
+        // Open Parenthesis Token
         else if (curChar() == '(') {
             name += curChar();
             tk = TokenKind.OpenParenthesisToken;
             nextPos();
         }
+
+        // Close Parenthesis Token
         else if (curChar() == ')') {
             name += curChar();
             tk = TokenKind.CloseParenthesisToken;
             nextPos();
         }
 
+        // Anything else
         else {
             name += curChar();
             tk = TokenKind.BadToken;
