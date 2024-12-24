@@ -103,6 +103,7 @@ public class Lexer {
         else {
             name += curChar();
             tk = TokenKind.BadToken;
+            nextPos();
         }
 
         return new Token(name, tk, start, value);
