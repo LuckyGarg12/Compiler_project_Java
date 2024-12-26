@@ -30,20 +30,20 @@ public class Lexer {
     // Returns the next token
     public Token nextToken() {
         String name = "";
-        TokenKind tk = null;
+        SyntaxKind tk = null;
         Integer value = null;
         int start = pos;
 
         // EOF token
         if (curChar() == '\0') {
             name += curChar();
-            tk = TokenKind.EndOfFileToken;
+            tk = SyntaxKind.EndOfFileToken;
         }
 
         // WhiteSpace token
         else if (Character.isWhitespace(curChar())) {
             name += curChar();
-            tk = TokenKind.WhitespaceToken;
+            tk = SyntaxKind.WhitespaceToken;
             nextPos();
         }
 
@@ -54,55 +54,55 @@ public class Lexer {
                 nextPos();
             }
             value = Integer.parseInt(name);
-            tk = TokenKind.NumberToken;
+            tk = SyntaxKind.NumberToken;
         }
 
         // Plus Operator Token
         else if (curChar() == '+') {
             name += curChar();
-            tk = TokenKind.PlusToken;
+            tk = SyntaxKind.PlusToken;
             nextPos();
         }
 
         // Minus Operator Token
         else if (curChar() == '-') {
             name += curChar();
-            tk = TokenKind.MinusToken;
+            tk = SyntaxKind.MinusToken;
             nextPos();
         }
 
         // Star Operator Token
         else if (curChar() == '*') {
             name += curChar();
-            tk = TokenKind.StarToken;
+            tk = SyntaxKind.StarToken;
             nextPos();
         }
 
         // Slash Operator Token
         else if (curChar() == '/') {
             name += curChar();
-            tk = TokenKind.SlashToken;
+            tk = SyntaxKind.SlashToken;
             nextPos();
         }
 
         // Open Parenthesis Token
         else if (curChar() == '(') {
             name += curChar();
-            tk = TokenKind.OpenParenthesisToken;
+            tk = SyntaxKind.OpenParenthesisToken;
             nextPos();
         }
 
         // Close Parenthesis Token
         else if (curChar() == ')') {
             name += curChar();
-            tk = TokenKind.CloseParenthesisToken;
+            tk = SyntaxKind.CloseParenthesisToken;
             nextPos();
         }
 
         // Anything else
         else {
             name += curChar();
-            tk = TokenKind.BadToken;
+            tk = SyntaxKind.BadToken;
             nextPos();
         }
 
@@ -120,7 +120,7 @@ public class Lexer {
             }
             System.out.println();
 
-        } while (token.type != TokenKind.EndOfFileToken);
+        } while (token.type != SyntaxKind.EndOfFileToken);
         
     }
 }

@@ -1,6 +1,6 @@
 // Enum for different types of tokens
 
-public enum TokenKind {
+public enum SyntaxKind {
     NumberToken,
     WhitespaceToken,
     PlusToken,
