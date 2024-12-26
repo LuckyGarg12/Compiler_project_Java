@@ -32,7 +32,7 @@ public class Lexer {
     }
 
     // Returns the next token
-    public Token nextToken() {
+    public SyntaxToken nextToken() {
         String name = "";
         SyntaxKind tk = null;
         Integer value = null;
@@ -110,12 +110,12 @@ public class Lexer {
             nextPos();
         }
 
-        return new Token(name, tk, start, value);
+        return new SyntaxToken(name, tk, start, value);
     }
 
     public static void main(String[] args) {
         Lexer l1 = new Lexer();
-        Token token;
+        SyntaxToken token;
         do {
             token = l1.nextToken();
             System.out.print("Name: "+token.name+" type: " + token.type + " Pos: " + token.pos);
