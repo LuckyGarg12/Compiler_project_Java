@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Lexer {
 
-    private String exp;
+    private String text;
     private int pos = 0;
 
     // Moves pointer ahead
@@ -12,19 +12,23 @@ public class Lexer {
 
     // Returns the character at current position of pointer 
     private char curChar() {
-        if (pos<exp.length()) return exp.charAt(pos);
+        if (pos<text.length()) return text.charAt(pos);
         else return '\0'; // For EndOfFile
     }
     
     // Constructor for Lexer
-    // Will take the program file as input
     // For testing, Taking Input from terminal
     public Lexer() {
         Scanner scanner = new Scanner(System.in);
 
-        exp = scanner.nextLine();
+        text = scanner.nextLine();
 
         scanner.close();
+    }
+
+    // Intializes lexer for given text
+    public Lexer(String text) {
+        this.text = text;
     }
 
     // Returns the next token
